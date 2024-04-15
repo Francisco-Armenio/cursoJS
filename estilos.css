@@ -1,0 +1,18 @@
+.formulario{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+
+
+.productos{
+    margin: 3rem;
+    display: flex;
+    gap: 8rem;
+}
+
+.tienda{
+    display: flex;
+    justify-content: center;
+}
