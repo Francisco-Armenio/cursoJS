@@ -1,39 +1,33 @@
 const productos= [
     {
         id: 1,
-        nombre: "Remera de boca",
-        precio: 1000,
-        img: "https://http2.mlstatic.com/D_NQ_NP_899654-MLA70862091276_082023-O.webp",
+        nombre: "Harry Potter 1",
+        precio: 21.999,
+        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
         
     },
     {
         id: 2,
-        nombre: "Remera de All boys",
-        precio: 300,
-        img: "https://http2.mlstatic.com/D_NQ_NP_899654-MLA70862091276_082023-O.webp",
+        nombre: "La felicidad",
+        precio: 19.999,
+        img: "https://www.planetadelibros.com.ar/usuaris/libros/fotos/354/m_libros/portada_la-felicidad_gabriel-rolon_202311082001.jpg",
         
     },
     {
         id: 3,
-        nombre: "Remera de Tigre",
-        precio: 500,
-        img: "https://http2.mlstatic.com/D_NQ_NP_899654-MLA70862091276_082023-O.webp",
+        nombre: "Donde esta Wally?",
+        precio: 24.799,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwbe0IdGktLdMTYExuGTCdIIbaf5C5XAR0wXyTjlcGRQ&s",
         
     },
     {
         id: 4,
-        nombre: "Remera de Belgrano",
-        precio: 10000,
-        img: "https://http2.mlstatic.com/D_NQ_NP_899654-MLA70862091276_082023-O.webp",
+        nombre: "Holly",
+        precio: 30.999,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV5dRrVdMSVOzUcHkMcRVNysAsmZwAnWItpzNtA0oEPA&s",
         
     },
-    {
-        id: 5,
-        nombre: "Remera de Lanus",
-        precio: 2500,
-        img: "https://http2.mlstatic.com/D_NQ_NP_899654-MLA70862091276_082023-O.webp",
-        
-    },
+
 ]
 let cartProducts = []
  let productContainer = document.getElementById("productos")
@@ -43,7 +37,7 @@ let cartProducts = []
         const card = document.createElement("div")
         card.innerHTML =`<img src="${producto.img}">
                          <h3 class="titulo">${producto.nombre}</h3>
-                         <p class="precio">${producto.precio}</p>
+                         <p class="precio">$${producto.precio}</p>
                          <button class="agregar" id="${producto.id}">Agregar</button>         
                         `
         productContainer.appendChild(card)                
