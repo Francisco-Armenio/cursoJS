@@ -30,6 +30,14 @@ const productos= [
 
 ]
 let cartProducts = []
+let cartProductsLS = localStorage.getItem("cartProducts")
+if(cartProductsLS) {
+    cartProducts = JSON.parse(cartProductsLS)
+} else{
+    cartProducts = []
+}
+
+
  let productContainer = document.getElementById("productos")
 
  function renderProductos(productsAarray) {
@@ -55,6 +63,8 @@ let cartProducts = []
 
             cartProducts.push(selectedProduct)
             console.log(cartProducts)
+
+            localStorage.setItem("cartProducts", JSON.stringify(cartProducts))
         }
     })
  }
