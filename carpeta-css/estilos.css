@@ -14,8 +14,8 @@
 }
 
 .nav-conteiner{
-    position: sticky;
-    z-index: 3;
+    /*position: sticky;
+    z-index: 3;*/
     top: 0;
 }
 
@@ -47,6 +47,64 @@
     cursor: pointer;
 }
 
+
+
+.overlay {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posición fija para cubrir toda la ventana */
+    z-index: 1; /* Colocar por encima del resto del contenido */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+}
+
+.cart {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posición fija para centrarlo en la ventana */
+    z-index: 2; /* Colocar por encima del overlay */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrar el modal */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    flex-direction: column;
+}
+
+.image-cart {
+    width:100px;
+    height: 150px;
+    margin-bottom: 12px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.button-close {
+    cursor: pointer;
+}
+
+.item {
+    padding: 20px;
+}
+
+.product-image {
+    width: 50px;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+}
+
 .productos{
     display: flex;
     justify-content: space-around;
@@ -54,5 +112,51 @@
     margin-top: 30px;
     margin-left: 80px;
     margin-right: 80px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgb(0, 0, 0, 0.20);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
+.productos img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.estilo-card{
+    padding: 15px 30;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.precio{
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.agregar{
+    border: none;
+    background: none;
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.tacho{
+    cursor: pointer;
+}
+
+.tacho2{
+    
+    cursor: pointer;
+}
+
+/*.productos:hover img{
+    transform: scale(1.2);
+}*/

@@ -24,4 +24,3 @@ function validarDatos(){
         alert("Usuario incorrecto");
     } 
 }
-
