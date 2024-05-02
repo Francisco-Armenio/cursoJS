@@ -129,11 +129,33 @@ function addToCartButton() {
             const selectedProduct = productos.find(
                 (producto) => producto.id == productId
             );
-            selectedProduct.cantidad++;
-            cartProducts.push(selectedProduct);
-            console.log(cartProducts);
 
+            // Verifica si el producto ya está en el carrito
+            const existingProductIndex = cartProducts.findIndex(
+                (producto) => producto.id == selectedProduct.id
+            );
+
+            if (existingProductIndex !== -1) {
+                // Si el producto ya está en el carrito, incrementa la cantidad
+                cartProducts[existingProductIndex].cantidad++;
+            } else {
+                // Si el producto no está en el carrito, agrégalo
+                selectedProduct.cantidad = 1; // Restablece la cantidad a 1
+                cartProducts.push(selectedProduct);
+            }
+
+            // Actualiza el Local Storage con los productos del carrito
             localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+
+            // Opcional: muestra un mensaje al usuario para indicar que se agregó el producto
+            
+
+            // Opcional: actualiza el contador del carrito en la interfaz de usuario
+            // updateCartCounter();
+
+            // Opcional: realiza otras acciones después de agregar el producto al carrito
+            // ...
+
         };
     });
 }
