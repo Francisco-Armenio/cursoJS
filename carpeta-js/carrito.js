@@ -1,45 +1,7 @@
-/*let cartStorage = localStorage.getItem("cartProducts")
-cartStorage = JSON.parse(cartStorage)
-
-let cartContainer = document.getElementById("cart-section")
-
-function renderCarrito (cartProducts) {
-    cartProducts.forEach(producto =>{
-      const cart = document.createElement("div")
-      cart.innerHTML = `<img src="${producto.img}">
-                        <h3>${producto.nombre}</3>
-                        <p>${producto.precio}</3>`
-        cartContainer.appendChild(cart)                  
-    })
-}
-renderCarrito(cartStorage)
-
-
-// Obtener el modal y el botón de cierre
-var modal = document.getElementById("cart-section");
-var carrito = document.getElementById("ver-carrito");
-var buttonClose = document.getElementsByClassName("button-close")[0];
-var overlay = document.getElementById("overlay");
-
-// Cuando el usuario haga clic en el botón, abrir el modal
-carrito.onclick = function () {
-    modal.style.display = "flex";
-    overlay.style.display = "block";
-} 
-  
-
-  // Cuando el usuario haga clic en el botón de cierre, cerrar el modal
-buttonClose.onclick = function() {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-  }
-*/
-
-
 let cartContainer = document.getElementById("cart-section")
 let divProductos = document.getElementById("cart-products")
 
-// Definir función para renderizar el carrito
+
 function renderCarrito(cartProducts, divProductos) {
   cartProducts.forEach(producto => {
     const cart = document.createElement("div");
@@ -59,64 +21,56 @@ function renderCarrito(cartProducts, divProductos) {
 
 
 
-// Función para eliminar un producto del carrito
+
 const eliminarProductoCarrito = (id) => {
-  // Busca el índice del producto en el carrito
+ 
   const indice = cartProducts.findIndex((producto) => producto.id === id);
 
-  // Si se encuentra el producto, verifica su cantidad
+  
   if (indice !== -1) {
     const producto = cartProducts[indice];
     if (producto.cantidad > 1) {
-      // Si la cantidad es mayor que 1, disminuye la cantidad en 1
+      
       producto.cantidad--;
     } else {
-      // Si la cantidad es 1, elimina completamente el producto del carrito
+ 
       cartProducts.splice(indice, 1);
     }
 
-    // Actualiza el carrito en el Local Storage
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
 
-    // Renderiza nuevamente el carrito para reflejar los cambios
     divProductos.innerHTML = "";
     renderCarrito(cartProducts, divProductos);
   }
 };
 
 
-// Escucha los clics en los botones de eliminación de productos
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("carrito-producto-eliminar")) {
-    // Obtiene el ID del producto a eliminar
+    
     const idProducto = parseInt(event.target.parentNode.id);
 
-    // Llama a la función para eliminar el producto del carrito
+    
     eliminarProductoCarrito(idProducto);
   }
 });
 
 
-// Obtener el botón
+
 let verCarrito = document.getElementById("ver-carrito");
 
 let modal = document.getElementById("cart-section");
 let buttonClose = document.getElementsByClassName("button-close")[0];
 
-// Agregar evento de clic al botón
+
 verCarrito.addEventListener("click", function () {
-  // Obtener los productos del carrito del Local Storage
+
   let cartStorage = localStorage.getItem("cartProducts");
   cartStorage = JSON.parse(cartStorage);
 
-  // Limpiar el contenedor del carrito antes de volver a renderizar
-  //cartContainer.innerHTML = "";
-
-  // Renderizar el carrito solo si hay productos en el Local Storage
   if (cartStorage && cartStorage.length > 0) {
     renderCarrito(cartStorage, divProductos);
   } else {
-    // Si no hay productos en el carrito, mostrar un mensaje al usuario
     const mensaje = document.createElement("p");
     mensaje.textContent = "No hay productos en el carrito.";
     cartContainer.appendChild(mensaje);
@@ -124,27 +78,19 @@ verCarrito.addEventListener("click", function () {
   }
 });
 
-// Cuando el usuario haga clic en el botón, abrir el modal
+
 verCarrito.onclick = function () {
   modal.style.display = "flex";
   overlay.style.display = "block";
 }
 
-// Cuando el usuario haga clic en el botón de cierre, cerrar el modal
-/*buttonClose.onclick = function() {
-    modal.style.display = "none";
-    overlay.style.display = "none";
-    cartContainer.innerHTML = "";
-}*/
-
-// Agregar evento de clic al botón de cierre del modal
 buttonClose.addEventListener("click", function () {
   modal.style.display = "none";
   overlay.style.display = "none";
-  // Obtener todos los elementos del carrito
+
   const elementosCarrito = document.querySelectorAll("#cart-products > div:not(#cerrar)");
 
-  // Eliminar solo los elementos que fueron agregados dinámicamente desde Local Storage
+
   elementosCarrito.forEach(elemento => {
     elemento.remove();
   });
@@ -163,11 +109,10 @@ document.getElementById("sweetAlert").addEventListener("click", () => {
   });
 });
 
-// Función para borrar todos los productos del carrito
 const vaciarCarrito = () => {
-  cartProducts = []; // Vacía el array de productos del carrito
-  localStorage.removeItem("cartProducts"); // Elimina los productos del carrito del Local Storage
-  divProductos.innerHTML = ""; // Vacía el contenedor de productos en el carrito
+  cartProducts = []; 
+  localStorage.removeItem("cartProducts"); 
+  divProductos.innerHTML = ""; 
 };
 
 const borrar = document.querySelector("#borrar")

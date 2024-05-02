@@ -3,7 +3,7 @@ const productos = [
         id: 1,
         nombre: "Harry Potter 1",
         precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        img: "https://contentv2.tap-commerce.com//cover/large/9789878000107_1.jpg?id_com=717",
         tacho: "🗑️",
         cantidad: "1"
     },
@@ -17,9 +17,9 @@ const productos = [
     },
     {
         id: 3,
-        nombre: "Donde esta Wally?",
-        precio: 24.799,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwbe0IdGktLdMTYExuGTCdIIbaf5C5XAR0wXyTjlcGRQ&s",
+        nombre: "La secta",
+        precio: 29.988,
+        img: "https://www.cadena3.com/admin/playerswf/fotos/ARCHI_980338.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
@@ -27,71 +27,71 @@ const productos = [
         id: 4,
         nombre: "Holly",
         precio: 30.999,
-        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV5dRrVdMSVOzUcHkMcRVNysAsmZwAnWItpzNtA0oEPA&s",
+        img: "https://acdn.mitiendanube.com/stores/001/731/769/products/9789506446949-b00d1aab4bd69a5aeb16962764061404-640-0.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 5,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "Violeta",
+        precio: 31.899,
+        img: "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/690814.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 6,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "Nuestra parte de noche",
+        precio: 33.499,
+        img: "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/671549.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 7,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "Los juegos del hambre 4",
+        precio: 29.299,
+        img: "https://e00-telva.uecdn.es/assets/multimedia/imagenes/2020/06/02/15910901797452.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 8,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "Alas de sangre",
+        precio: 29.999,
+        img: "https://www.planetadelibros.com/usuaris/libros/fotos/385/original/portada_alas-de-sangre-empireo-1_rebecca-yarros_202309141523.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 9,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "Diario de Greg 1",
+        precio: 5.542,
+        img: "https://www.penguinlibros.com/ar/1648023/diario-de-greg-1-un-pringao-total.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 10,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "De profesión fantasma",
+        precio: 4.777,
+        img: "https://media.revistagq.com/photos/5d494fa86b1ecf0008a51b31/master/w_320%2Cc_limit/91S6-2ArfwL.jpg",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 11,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "Diario de Greg 12",
+        precio: 5.542,
+        img: "https://http2.mlstatic.com/D_NQ_NP_991250-MLA49191619141_022022-O.webp",
         tacho: "🗑️",
         cantidad: "1"
     },
     {
         id: 12,
-        nombre: "Harry Potter 1",
-        precio: 21.999,
-        img: "https://images.cdn2.buscalibre.com/fit-in/360x360/e6/5f/e65f54742ad7bbc41903d17f75b77d78.jpg",
+        nombre: "El principito",
+        precio: 8.888,
+        img: "https://libry.cl/cdn/shop/products/9af2ec319859728376cd6a3190cf2d65.jpg?v=1666104281&width=480",
         tacho: "🗑️",
         cantidad: "1"
     },
@@ -130,41 +130,31 @@ function addToCartButton() {
                 (producto) => producto.id == productId
             );
 
-            // Verifica si el producto ya está en el carrito
+           
             const existingProductIndex = cartProducts.findIndex(
                 (producto) => producto.id == selectedProduct.id
             );
 
             if (existingProductIndex !== -1) {
-                // Si el producto ya está en el carrito, incrementa la cantidad
+               
                 cartProducts[existingProductIndex].cantidad++;
             } else {
-                // Si el producto no está en el carrito, agrégalo
-                selectedProduct.cantidad = 1; // Restablece la cantidad a 1
+                selectedProduct.cantidad = 1; 
                 cartProducts.push(selectedProduct);
             }
 
-            // Actualiza el Local Storage con los productos del carrito
             localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
 
-            // Opcional: muestra un mensaje al usuario para indicar que se agregó el producto
-            
-
-            // Opcional: actualiza el contador del carrito en la interfaz de usuario
-            // updateCartCounter();
-
-            // Opcional: realiza otras acciones después de agregar el producto al carrito
-            // ...
 
         };
     });
 }
 
 
-/*Swal.fire({
+Swal.fire({
     title: 'Bienvenido',
     text: 'Hola de nuevo manuel, listo para comprar?',
     icon: 'question',
     confirmButtonText: 'A comprar',
     iconHtml: ':)',
-  })*/
+  })
